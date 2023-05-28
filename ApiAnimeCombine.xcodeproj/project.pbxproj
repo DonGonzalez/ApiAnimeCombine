@@ -121,28 +121,6 @@
 		A122E2822A23EA10002BCAAA = {
 			isa = PBXGroup;
 			children = (
-				A122E2EE2A23EFB9002BCAAA /* TableViewCell.swift */,
-				A122E2EF2A23EFB9002BCAAA /* TableViewCell.xib */,
-				A122E2EA2A23ECF4002BCAAA /* DetailAnimeViewModel.swift */,
-				A122E2E82A23ECDC002BCAAA /* AnimeViewModel.swift */,
-				A122E2E62A23ECC4002BCAAA /* NavigationBarButtons.swift */,
-				A122E2E42A23ECA6002BCAAA /*  ModalViewController.swift */,
-				A122E2E22A23EC90002BCAAA /* DetailAnimeViewController.swift */,
-				A122E2E02A23EC78002BCAAA /* AnimeViewController.swift */,
-				A122E2DA2A23EC27002BCAAA /* AnimeTableView.swift */,
-				A122E2D82A23EBFC002BCAAA /* DetailAnimeScrollView.swift */,
-				A122E2D62A23EBE2002BCAAA /* URL.swift */,
-				A122E2D42A23EBC9002BCAAA /* Services.swift */,
-				A122E2D22A23EBB0002BCAAA /* PopupAlert.swift */,
-				A122E2D02A23EB91002BCAAA /* MessageView.swift */,
-				A122E2CE2A23EB76002BCAAA /* LoadingPopup.swift */,
-				A122E2CC2A23EB5A002BCAAA /* SingleAnime.swift */,
-				A122E2CA2A23EB45002BCAAA /* PosterImageData.swift */,
-				A122E2C82A23EB2D002BCAAA /* MessageErrorType.swift */,
-				A122E2C62A23EB12002BCAAA /* ErrorMessage.swift */,
-				A122E2C42A23EAF0002BCAAA /* Endpoint.swift */,
-				A122E2C22A23EAD5002BCAAA /* AttributesData.swift */,
-				A122E2C02A23EAB2002BCAAA /* AnimeData.swift */,
 				A122E28D2A23EA10002BCAAA /* ApiAnimeCombine */,
 				A122E2A42A23EA12002BCAAA /* ApiAnimeCombineTests */,
 				A122E2AE2A23EA12002BCAAA /* ApiAnimeCombineUITests */,
@@ -163,8 +141,12 @@
 		A122E28D2A23EA10002BCAAA /* ApiAnimeCombine */ = {
 			isa = PBXGroup;
 			children = (
-				A122E28E2A23EA10002BCAAA /* AppDelegate.swift */,
-				A122E2902A23EA10002BCAAA /* SceneDelegate.swift */,
+				A122E2F82A2402BA002BCAAA /* View */,
+				A122E2F72A24026A002BCAAA /* Services */,
+				A122E2F62A240256002BCAAA /* Entities */,
+				A122E2F42A240231002BCAAA /* ViewController */,
+				A122E2F32A240222002BCAAA /* ViewModel */,
+				A122E2F22A240205002BCAAA /* Delegate */,
 				A122E2972A23EA11002BCAAA /* Assets.xcassets */,
 				A122E2992A23EA11002BCAAA /* LaunchScreen.storyboard */,
 				A122E29C2A23EA11002BCAAA /* Info.plist */,
@@ -188,6 +170,80 @@
 				A122E2B12A23EA12002BCAAA /* ApiAnimeCombineUITestsLaunchTests.swift */,
 			);
 			path = ApiAnimeCombineUITests;
+			sourceTree = "<group>";
+		};
+		A122E2F22A240205002BCAAA /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				A122E2902A23EA10002BCAAA /* SceneDelegate.swift */,
+				A122E28E2A23EA10002BCAAA /* AppDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		A122E2F32A240222002BCAAA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A122E2E82A23ECDC002BCAAA /* AnimeViewModel.swift */,
+				A122E2EA2A23ECF4002BCAAA /* DetailAnimeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A122E2F42A240231002BCAAA /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A122E2E42A23ECA6002BCAAA /*  ModalViewController.swift */,
+				A122E2E22A23EC90002BCAAA /* DetailAnimeViewController.swift */,
+				A122E2E02A23EC78002BCAAA /* AnimeViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		A122E2F52A240246002BCAAA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A122E2CC2A23EB5A002BCAAA /* SingleAnime.swift */,
+				A122E2C22A23EAD5002BCAAA /* AttributesData.swift */,
+				A122E2C02A23EAB2002BCAAA /* AnimeData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A122E2F62A240256002BCAAA /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				A122E2D62A23EBE2002BCAAA /* URL.swift */,
+				A122E2CA2A23EB45002BCAAA /* PosterImageData.swift */,
+				A122E2C82A23EB2D002BCAAA /* MessageErrorType.swift */,
+				A122E2C62A23EB12002BCAAA /* ErrorMessage.swift */,
+				A122E2C42A23EAF0002BCAAA /* Endpoint.swift */,
+				A122E2F52A240246002BCAAA /* Model */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		A122E2F72A24026A002BCAAA /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A122E2D42A23EBC9002BCAAA /* Services.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A122E2F82A2402BA002BCAAA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A122E2EE2A23EFB9002BCAAA /* TableViewCell.swift */,
+				A122E2EF2A23EFB9002BCAAA /* TableViewCell.xib */,
+				A122E2E62A23ECC4002BCAAA /* NavigationBarButtons.swift */,
+				A122E2DA2A23EC27002BCAAA /* AnimeTableView.swift */,
+				A122E2D82A23EBFC002BCAAA /* DetailAnimeScrollView.swift */,
+				A122E2CE2A23EB76002BCAAA /* LoadingPopup.swift */,
+				A122E2D02A23EB91002BCAAA /* MessageView.swift */,
+				A122E2D22A23EBB0002BCAAA /* PopupAlert.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
