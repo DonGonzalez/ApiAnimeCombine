@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="145" id="KGk-i7-Jjw" customClass="TableViewCell" customModule="ApiAnimeCombine" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="449" height="145"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="449" height="145"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Jiy-z0-7dp">
+                        <rect key="frame" x="20" y="11" width="409" height="123"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kq3-fO-hzf" userLabel="AnimeImageView">
+                                <rect key="frame" x="0.0" y="0.0" width="194.66666666666666" height="123"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="250" id="15W-AW-e6I"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="XWj-Y5-an0"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="4EC-Ql-xY5">
+                                <rect key="frame" x="214.66666666666663" y="0.0" width="194.33333333333337" height="123"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fk-v9-2V6" userLabel="AnimeTitle">
+                                        <rect key="frame" x="0.0" y="0.0" width="194.33333333333334" height="59"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g4p-mH-brD" userLabel="AnimeSeason">
+                                        <rect key="frame" x="0.0" y="64" width="194.33333333333334" height="59"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottomMargin" secondItem="Jiy-z0-7dp" secondAttribute="bottom" id="DO3-69-0aJ"/>
+                    <constraint firstItem="Jiy-z0-7dp" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="Qit-8x-A9j"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Jiy-z0-7dp" secondAttribute="trailing" id="nCM-H1-aDB"/>
+                    <constraint firstItem="Jiy-z0-7dp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="q2a-ec-981"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="AnimeImageView" destination="kq3-fO-hzf" id="YA8-ed-8gN"/>
+                <outlet property="AnimeSeason" destination="g4p-mH-brD" id="4z7-zY-nO2"/>
+                <outlet property="AnimeTitle" destination="1fk-v9-2V6" id="rLz-5F-6dg"/>
+            </connections>
+            <point key="canvasLocation" x="204" y="19"/>
+        </tableViewCell>
+    </objects>
+</document>
