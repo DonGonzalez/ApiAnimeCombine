@@ -13,16 +13,15 @@ extension AnimeViewController {
     
     func createNavigationBarButtons() {
         
-     //   UIBarButtonItem(barButtonSystemItem: .search,
-     //                                    target: self,
-      //                                   action: #selector(sortActionBT))
-        let sortButton = UIBarButtonItem(image: UIImage(named: "FilterIcon"),
-                                           style: .plain, target: self,
-                                           action: #selector(filterActionBT))
+        let sortButton = UIBarButtonItem(barButtonSystemItem: .search,
+                                         target: self,
+                                         action: #selector(sortActionBT))
         
-        let filterButton = UIBarButtonItem(image: UIImage(named: "FilterIcon"),
-                                           style: .plain, target: self,
-                                           action: #selector(filterActionBT))
+        
+        let filterButton = UIBarButtonItem(barButtonSystemItem: .organize,
+                                           target: self,
+                                           action:#selector(filterActionBT))
+        
         
         sortButton.customView?.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
         navigationItem.setRightBarButtonItems([sortButton, filterButton], animated: false)

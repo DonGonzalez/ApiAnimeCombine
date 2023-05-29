@@ -148,7 +148,7 @@ extension AnimeViewController: UITableViewDelegate {
         let totalNumberOfCell = tableView.numberOfRows(inSection: 0)
         let lastDetectCell = indexPath.last
         // Check when create request and add new data to TableView
-        if lastDetectCell! + 1 ==  animeTableView.animeDetails!.count
+        if lastDetectCell! - 5 ==  animeTableView.animeDetails!.count - 6
             && animeTableView.animeDetails?.count != offset{
             //send to model view information for request
             self.infiniteScroll.send(totalNumberOfCell)
@@ -164,6 +164,12 @@ extension AnimeViewController: UISearchBarDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.searchBar.searchTextField.isUserInteractionEnabled = true
         self.searchBar.isUserInteractionEnabled = true
+    }
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.count > 3 {
+            let convertedUserText = "&filter[text]=\(searchText.convertUserText)"
+            self.searchText.send(convertedUserText)
+        }
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
