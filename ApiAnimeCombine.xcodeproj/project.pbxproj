@@ -37,6 +37,9 @@
 		A122E2EB2A23ECF4002BCAAA /* DetailAnimeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A122E2EA2A23ECF4002BCAAA /* DetailAnimeViewModel.swift */; };
 		A122E2F02A23EFB9002BCAAA /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A122E2EE2A23EFB9002BCAAA /* TableViewCell.swift */; };
 		A122E2F12A23EFB9002BCAAA /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A122E2EF2A23EFB9002BCAAA /* TableViewCell.xib */; };
+		A122E2FB2A325E97002BCAAA /* SortModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = A122E2FA2A325E97002BCAAA /* SortModule.swift */; };
+		A122E2FD2A325EBA002BCAAA /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A122E2FC2A325EBA002BCAAA /* Enum.swift */; };
+		A122E2FF2A325FEF002BCAAA /* FilterModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = A122E2FE2A325FEF002BCAAA /* FilterModule.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +94,9 @@
 		A122E2EA2A23ECF4002BCAAA /* DetailAnimeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAnimeViewModel.swift; sourceTree = "<group>"; };
 		A122E2EE2A23EFB9002BCAAA /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		A122E2EF2A23EFB9002BCAAA /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		A122E2FA2A325E97002BCAAA /* SortModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortModule.swift; sourceTree = "<group>"; };
+		A122E2FC2A325EBA002BCAAA /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
+		A122E2FE2A325FEF002BCAAA /* FilterModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterModule.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,7 +199,7 @@
 		A122E2F42A240231002BCAAA /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				A122E2E42A23ECA6002BCAAA /*  ModalViewController.swift */,
+				A122E2F92A325E72002BCAAA /* ModalViewController */,
 				A122E2E22A23EC90002BCAAA /* DetailAnimeViewController.swift */,
 				A122E2E02A23EC78002BCAAA /* AnimeViewController.swift */,
 			);
@@ -234,16 +240,27 @@
 		A122E2F82A2402BA002BCAAA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A122E2DA2A23EC27002BCAAA /* AnimeTableView.swift */,
 				A122E2EE2A23EFB9002BCAAA /* TableViewCell.swift */,
 				A122E2EF2A23EFB9002BCAAA /* TableViewCell.xib */,
 				A122E2E62A23ECC4002BCAAA /* NavigationBarButtons.swift */,
-				A122E2DA2A23EC27002BCAAA /* AnimeTableView.swift */,
 				A122E2D82A23EBFC002BCAAA /* DetailAnimeScrollView.swift */,
 				A122E2CE2A23EB76002BCAAA /* LoadingPopup.swift */,
 				A122E2D02A23EB91002BCAAA /* MessageView.swift */,
 				A122E2D22A23EBB0002BCAAA /* PopupAlert.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		A122E2F92A325E72002BCAAA /* ModalViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A122E2E42A23ECA6002BCAAA /*  ModalViewController.swift */,
+				A122E2FC2A325EBA002BCAAA /* Enum.swift */,
+				A122E2FA2A325E97002BCAAA /* SortModule.swift */,
+				A122E2FE2A325FEF002BCAAA /* FilterModule.swift */,
+			);
+			path = ModalViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -393,9 +410,12 @@
 				A122E28F2A23EA10002BCAAA /* AppDelegate.swift in Sources */,
 				A122E2D72A23EBE2002BCAAA /* URL.swift in Sources */,
 				A122E2D32A23EBB0002BCAAA /* PopupAlert.swift in Sources */,
+				A122E2FF2A325FEF002BCAAA /* FilterModule.swift in Sources */,
 				A122E2912A23EA10002BCAAA /* SceneDelegate.swift in Sources */,
 				A122E2C12A23EAB2002BCAAA /* AnimeData.swift in Sources */,
 				A122E2BF2A23EA21002BCAAA /* Anime.swift in Sources */,
+				A122E2FB2A325E97002BCAAA /* SortModule.swift in Sources */,
+				A122E2FD2A325EBA002BCAAA /* Enum.swift in Sources */,
 				A122E2E32A23EC90002BCAAA /* DetailAnimeViewController.swift in Sources */,
 				A122E2D92A23EBFC002BCAAA /* DetailAnimeScrollView.swift in Sources */,
 				A122E2E72A23ECC4002BCAAA /* NavigationBarButtons.swift in Sources */,

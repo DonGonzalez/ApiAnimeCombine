@@ -46,29 +46,32 @@ private func request<T: Decodable> (url: URL?) -> AnyPublisher<T, ErrorMessage> 
         .eraseToAnyPublisher()
 }
 
-private var imageCache = NSCache <AnyObject, AnyObject> ()
+private var imageCache = NSCache <NSURL,UIImage> ()
 private var cancellable = Set<AnyCancellable>()
+
 extension UIImageView {
-    
+  
     func loadImage(url: String?) {
-        requestImage(for: url)
-            .receive(on: DispatchQueue.main)
-            .sink(receiveCompletion: { failure in
-                // print(failure)
-            }, receiveValue: { image in
-                self.image = image
-            })
-            .store(in: &cancellable)
+         
+            self.requestImage(for: url)
+                .receive(on: DispatchQueue.main)
+                .sink(receiveCompletion: { failure in
+                }, receiveValue: { image in
+                    self.image = image
+                })
+                .store(in: &cancellable)        
     }
     
    private func requestImage(for url: String?) -> AnyPublisher<UIImage, Error> {
+       
         guard let url = url else {
             let image = UIImage(systemName: "photo")!
             return Just(image)
                 .setFailureType(to: Error.self)
                 .eraseToAnyPublisher()
         }
-        if let image = imageCache.object(forKey: URL(string:url)! as NSURL) as? UIImage {
+       if let image = imageCache.object(forKey: URL(string:url)! as NSURL) {
+           print("image juz istnieje")
             return Just(image)
                 .setFailureType(to: Error.self)
                 .receive(on: DispatchQueue.main)
@@ -77,20 +80,23 @@ extension UIImageView {
             return URLSession.shared
                 .dataTaskPublisher(for: URL(string: url)!)
                 .map(\.data)
-                .receive(on: DispatchQueue.main)
                 .tryMap { data in
                     if data == data {
                         let image = UIImage(data: data)
-                        return image!
-                    } else {
-                        let defaultImage = UIImage(systemName: "photo")
-                        return defaultImage!
+                        print("nowy image")
+                        return image ??  UIImage(systemName: "photo")!
                     }
+                  else {
+                      let defaultImage = UIImage(systemName: "photo")
+                      return defaultImage!
+                  }
                 }
                 .handleEvents(receiveOutput: { [imageCache] image in
                     imageCache.setObject(image, forKey: URL(string:url)! as NSURL)
+                    print("image dodany do cache")
                 })
                 .eraseToAnyPublisher()
+        
         }
     }
 }

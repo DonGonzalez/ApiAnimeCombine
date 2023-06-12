@@ -42,12 +42,10 @@ extension AnimeViewController {
     func toolBarItemDidTap(type: ModalViewController.UserFilterOption) {
         
         if type == .sort {
-            print("sort tap")
             let modalCV = self.viewModel?.createUserFiltringMenu(modalType: type, sortSelect: self.viewModel?.sortDataToSend ?? [], filterSelect:  self.viewModel?.filterDataToSend ?? .emptyEnum)
             self.present(modalCV!, animated: false)
         }
         if type == .filter {
-            print("filter tap")
             let modalCV = self.viewModel?.createUserFiltringMenu(modalType: type, sortSelect:  self.viewModel?.sortDataToSend ?? [], filterSelect:  self.viewModel?.filterDataToSend ?? .emptyEnum )
             self.present(modalCV!, animated: false)
         }

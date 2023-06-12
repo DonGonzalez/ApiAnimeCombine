@@ -55,8 +55,6 @@ class AnimeViewModel {
                 return filter
             }
             .sink { [weak self] filterAnime in
-                print("1234")
-                print(filterAnime)
                 self?.filterAnimeData(filter: filterAnime)
             }
             .store(in: &modalVC.modalCancelable)
@@ -80,7 +78,6 @@ class AnimeViewModel {
                     break
                 case .failure(let error):
                     self.publishMessageErrorType.send(MessageErrorType.failure(error.description))
-                    print(error.self)
                 }
             } receiveValue: { anime in
                 self.publishAnime.send(anime)
@@ -118,7 +115,6 @@ class AnimeViewModel {
                         break
                     case .failure(let error):
                         self.publishMessageErrorType.send(MessageErrorType.failure(error.description))
-                        print(error.self)
                     }
                 } receiveValue: { anime in
                     self.publishAnime.send(anime)
@@ -169,16 +165,14 @@ class AnimeViewModel {
         
         input.clickAnimeCell
             .sink { [unowned self] cellIndex in
-                print(cellIndex)
                 // this is correct -> show popup and create request?
                 self.publishLoadingPopup.send()
                 Services.shared.getSingleAnime(endpoint: Endpoint.singleAnime(id: cellIndex))
                     .sink { [weak self] complition in
                         switch complition{
                         case .finished:
-                            return print("done")
+                            print("done")
                         case.failure(let error):
-                            print("sdsdsdd\(error)")
                             self?.publishDismissLoadingPopup.send()
                             self?.publishMessageErrorType.send(MessageErrorType.failure(error.description))
                             return
@@ -217,7 +211,7 @@ class AnimeViewModel {
                     .sink { [weak self] error in
                         switch error {
                         case .finished:
-                            return print("done")
+                            print("done")
                         case .failure(let error):
                             self?.publishMessageErrorType.send(MessageErrorType.failure(error.description))
                             return

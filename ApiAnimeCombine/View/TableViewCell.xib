@@ -20,7 +20,7 @@
                         <rect key="frame" x="20" y="11" width="409" height="123"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kq3-fO-hzf" userLabel="AnimeImageView">
-                                <rect key="frame" x="0.0" y="0.0" width="194.66666666666666" height="123"/>
+                                <rect key="frame" x="0.0" y="1.6666666666666643" width="194.66666666666666" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="250" id="15W-AW-e6I"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="XWj-Y5-an0"/>

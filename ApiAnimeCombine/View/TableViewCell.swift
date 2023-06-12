@@ -15,6 +15,8 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var AnimeSeason: UILabel!
     @IBOutlet weak var AnimeTitle: UILabel!
     
+    var identif: String = ""
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -25,7 +27,7 @@ class TableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+    //imageURL: String?
     func config(title: String, season: Int, imageURL: String?){
         AnimeTitle.text = title
         AnimeSeason.text = String(season)

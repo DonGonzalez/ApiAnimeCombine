@@ -77,7 +77,6 @@ class AnimeViewController: UIViewController {
         output?.showAnimeData
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { complition in
-                print("showdatacomp\(complition)")
             }, receiveValue: { [weak self] data in
                 self?.animeTableView.showData(data: data)
             })
@@ -105,7 +104,6 @@ class AnimeViewController: UIViewController {
                 case .finished:
                     return
                 case .failure(let error):
-                    print(" showAnimeData \(error)")
                     return
                 }
             }, receiveValue: {[weak self] anime in
@@ -128,7 +126,6 @@ class AnimeViewController: UIViewController {
         
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { error in
-                print(error)
             }, receiveValue: { anime in
                 self.animeTableView.addData(newData: anime)
             })
